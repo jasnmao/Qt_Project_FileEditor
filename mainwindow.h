@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include<QLineEdit>
 #include<QDialog>
+#include<QLabel>
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -29,6 +30,8 @@ public:
 private:
     QLineEdit *findLineEdit;
     QDialog *findDialog;
+    QLabel *statusLabel;
+    QLabel *perLabel;
 
 private slots:
     void showFindText();

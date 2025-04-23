@@ -6,7 +6,7 @@
 #include<QFileDialog>
 #include<QTextStream>
 #include<QCloseEvent>
-
+#include<QFrame>
 MainWindow::MainWindow(QWidget *parent)//构造函数
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -30,6 +30,20 @@ MainWindow::MainWindow(QWidget *parent)//构造函数
     layout->addWidget(btn);
     //关联槽函数
     connect(btn,&QPushButton::clicked,this,&MainWindow::showFindText);
+    //设置常规标签
+    statusLabel=new QLabel;
+    statusLabel->setMinimumSize(150,20);
+    statusLabel->setFrameShape(QFrame::WinPanel);
+    statusLabel->setFrameShadow(QFrame::Sunken);
+    ui->statusbar->addWidget(statusLabel);
+    statusLabel->setText(tr("欢迎访问Qt文本编辑器"));
+    //设置永久标签并关联到网页
+    perLabel=new QLabel;
+    perLabel->setFrameStyle(QFrame::Box | QFrame::Sunken);
+    perLabel->setText(tr("<a href=\"http://www.baidu.com\">百度</a>"));
+    perLabel->setTextFormat(Qt::RichText);
+    perLabel->setOpenExternalLinks(true);
+    ui->statusbar->addWidget(perLabel);
 }
 
 MainWindow::~MainWindow()
