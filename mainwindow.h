@@ -2,7 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include<QLineEdit>
+#include<QDialog>
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -25,8 +26,13 @@ public:
     bool load_file(const QString &filename);
     void close_event(QCloseEvent *event);
 
+private:
+    QLineEdit *findLineEdit;
+    QDialog *findDialog;
 
 private slots:
+    void showFindText();
+
     void on_actionnew_triggered();
     void on_actionsave_triggered();
     void on_actionsaveas_triggered();
@@ -35,7 +41,8 @@ private slots:
     void on_actioncancel_triggered();
     void on_actioncopy_triggered();
     void on_actionpaste_triggered();
-    void on_actionexit_triggered();
+    void on_actionquit_triggered();
+    void on_actionfind_triggered();
 
 private:
     Ui::MainWindow *ui;

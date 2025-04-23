@@ -43,6 +43,7 @@
     <addaction name="actioncopy"/>
     <addaction name="actionpaste"/>
     <addaction name="actionquit"/>
+    <addaction name="actionfind"/>
    </widget>
    <addaction name="menu_F"/>
   </widget>
@@ -143,6 +144,17 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionfind">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::SystemSearch"/>
+   </property>
+   <property name="text">
+    <string>查找(&amp;D)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
    </property>
   </action>
  </widget>
